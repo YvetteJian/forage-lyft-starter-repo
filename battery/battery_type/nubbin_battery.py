@@ -8,7 +8,7 @@ class NubbinBattery(Battery):
 
     def needs_service(self):
         date_need_service = self.last_service_date.replace(year=self.last_service_date.year + self.nubbin_year_need_service)
-        if date_need_service < self.current_date:
+        if date_need_service > self.current_date:
             return True
         else:
             return False
